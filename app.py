@@ -35,6 +35,9 @@ def test_db():
     else:
         return jsonify({"status": "error", "message": message}), 500
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "API is up and running!"})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=3000)
